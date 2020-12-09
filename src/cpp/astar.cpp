@@ -28,7 +28,7 @@ bool operator<(const Node &n1, const Node &n2) {
 // http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html#S7
 // L_\inf norm (diagonal distance)
 inline float linf_norm(int x0, int y0, int x1, int y1) {
-  return std::max(std::abs(x0 - x1), std::abs(y0 - y1)) + 0.4142136 * std::min(std::abs(x0 - x1), std::abs(y0 - y1));
+  return std::max(std::abs(x0 - x1), std::abs(y0 - y1)) + 0.41421 * std::min(std::abs(x0 - x1), std::abs(y0 - y1));
 }
 
 // L_1 norm (manhattan distance)
@@ -106,7 +106,7 @@ static PyObject *astar(PyObject *self, PyObject *args) {
             float new_cost = costs[cur.idx] + weights[nbrs[i]];
         }
         else {
-            float new_cost = costs[cur.idx] + weights[nbrs[i]] * 1.414;
+            float new_cost = costs[cur.idx] + weights[nbrs[i]] * 1.4142;
         }
         if (new_cost < costs[nbrs[i]]) {
           // estimate the cost to the goal based on legal moves
