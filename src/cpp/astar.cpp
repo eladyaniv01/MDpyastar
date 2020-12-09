@@ -106,7 +106,7 @@ static PyObject *astar(PyObject *self, PyObject *args) {
             float new_cost = costs[cur.idx] + weights[nbrs[i]];
         }
         else {
-            float new_cost = costs[cur.idx] + weights[nbrs[i]] * 1.4142136;
+            float new_cost = costs[cur.idx] + weights[nbrs[i]] * 1.414;
         }
         if (new_cost < costs[nbrs[i]]) {
           // estimate the cost to the goal based on legal moves
