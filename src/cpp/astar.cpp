@@ -28,8 +28,11 @@ bool operator<(const Node &n1, const Node &n2) {
 // http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html#S7
 // L_\inf norm (diagonal distance)
 inline float linf_norm(int i0, int j0, int i1, int j1) {
-  return std::max(std::abs(i0 - i1), std::abs(j0 - j1)) + 0.4142136 * std::min(std::abs(i0 - i1), std::abs(j0 - j1));
+  return sqrt(pow(i1-i0, 2) + pow(j1-j0, 2));  
 }
+//dx = std::abs(i0 - i1);
+//  dy = std::abs(j0 - j10)4t024itj1;
+//  return std::max(dx, dy) + 0.4142136 * std::min(dx, dy);
 
 // L_1 norm (manhattan distance)
 inline float l1_norm(int i0, int j0, int i1, int j1) {
