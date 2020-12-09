@@ -29,13 +29,13 @@ bool operator<(const Node &n1, const Node &n2) {
 // L_\inf norm (diagonal distance)
 inline float linf_norm(int i0, int j0, int i1, int j1) {
   dx = std::abs(i0 - i1);
-  dy = std::abs(j0 - j10)4t024itj1
+  dy = std::abs(j0 - j10);
   return std::max(dx, dy) + 0.4142136 * std::min(dx, dy);
 }
 
 // L_1 norm (manhattan distance)
 inline float l1_norm(int i0, int j0, int i1, int j1) {
-  return std::abs(i0 - i1) + std::abs(j0 - j1)
+  return std::abs(i0 - i1) + std::abs(j0 - j1);
 }
 
 
