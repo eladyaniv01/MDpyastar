@@ -102,7 +102,12 @@ static PyObject *astar(PyObject *self, PyObject *args) {
     for (int i = 0; i < 8; ++i) {
       if (nbrs[i] >= 0) {
         // the sum of the cost so far and the cost of this move
-        float new_cost = costs[cur.idx] + weights[nbrs[i]];
+        if (i < 4){
+            float new_cost = costs[cur.idx] + weights[nbrs[i]];
+        }
+        else {
+            float new_cost = costs[cur.idx] + weights[nbrs[i]] * 1.4142136
+        }
         if (new_cost < costs[nbrs[i]]) {
           // estimate the cost to the goal based on legal moves
           if (diag_ok) {
